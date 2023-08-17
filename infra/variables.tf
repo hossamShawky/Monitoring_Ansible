@@ -5,7 +5,7 @@ variable "region" {
 
 variable "key" {
   type    = string
-  default = "monitoringKey"
+  default = "mykey"
 }
 
 variable "type" {

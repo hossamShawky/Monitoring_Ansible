@@ -1,0 +1,8 @@
+- name: test 
+  gather_facts: false
+  hosts: prometheus
+  tasks:
+   - name: install-nginx-task
+     apt:
+      name: nginx
+      state: latest

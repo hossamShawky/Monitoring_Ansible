@@ -119,12 +119,12 @@ data "aws_ami" "EC2-Ubuntu" {
 
 
 resource "aws_instance" "EC2" {
-  count = length(var.instances)
-  ami = data.aws_ami.EC2-Ubuntu.id
-  instance_type = var.type
-  subnet_id = aws_subnet.monitoring-subnet[count.index].id
+  count                  = length(var.instances)
+  ami                    = data.aws_ami.EC2-Ubuntu.id
+  instance_type          = var.type
+  subnet_id              = aws_subnet.monitoring-subnet[count.index].id
   vpc_security_group_ids = [aws_security_group.Monitoring-SG.id]
-  key_name = var.key_name
+  key_name               = var.key
   tags = {
     env = var.instances[count.index]
   }
