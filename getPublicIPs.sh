@@ -2,7 +2,7 @@
 
 # Populate Inventory
 
-prometheus=$(aws ec2 describe-instances \
+ip=$(aws ec2 describe-instances \
 --filters "Name=tag:env,Values=prometheus" "Name=instance-state-name,Values=running" \
 --query 'Reservations[*].Instances[*].PublicIpAddress' \
 --output text)
@@ -10,7 +10,7 @@ prometheus=$(aws ec2 describe-instances \
 
 cat > inventory <<EOF
 [prometheus]
-$prometheus
+$ip
 
 EOF
 
@@ -20,4 +20,8 @@ echo "Starting Playbook Now..."
 ansible-playbook playbook.yml 
 
 echo "You can access Prometheus dashboard on: "
-echo "http://"$prometheus:9090
+echo "http://"$ip:9090
+
+echo "You can access NodeExporter dashboard on: "
+echo "https://"$ip:9100
+

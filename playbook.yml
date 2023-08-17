@@ -1,5 +1,6 @@
 - name: Prometheus Playbook
   hosts: prometheus
   roles:
+    - node_Exporter
     - prometheus
 
