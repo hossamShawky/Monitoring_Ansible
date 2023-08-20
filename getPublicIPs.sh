@@ -17,7 +17,7 @@ EOF
 echo "The inventory has been updated!"
 echo "Starting Playbook Now..."
 
-ansible-playbook playbook.yml 
+ansible-playbook playbook.yml --ask-vault-pass 
 
 echo "You can access Prometheus dashboard on: "
 echo "http://"$ip:9090

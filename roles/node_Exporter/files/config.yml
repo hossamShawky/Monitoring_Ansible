@@ -2,4 +2,4 @@ tls_server_config:
   cert_file: node_exporter.crt
   key_file: node_exporter.key
 basic_auth_users:
-  prometheus: $2y$10$YFBNVaJKvldj.0IQRaWF.eHCnoH18sDbu.Glhc6PbKQgaiT1iL1fW 
+  admin: $2y$10$YFBNVaJKvldj.0IQRaWF.eHCnoH18sDbu.Glhc6PbKQgaiT1iL1fW 
