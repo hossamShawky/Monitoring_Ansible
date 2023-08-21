@@ -33,6 +33,11 @@
      dest: /etc/docker/daemon.json
   notify: ReStart Docker
 
+- name: Set permissions to 777 to docker
+  file: 
+    path: /var/run/docker.sock
+    mode: '0777'
+
 
 - name: Run cadvisor container
   docker_container:
@@ -51,3 +56,5 @@
     - "/dev/kmsg"
    detach: yes
    state: started
+
+     
