@@ -35,3 +35,6 @@ scrape_configs:
           access_key: {{ access_key }}
           secret_key: {{ secret_key }}
           port: 9100
+  - job_name: "Graganaa"
+    static_configs:
+     - targets: ["localhost:3000"]

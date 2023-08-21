@@ -25,3 +25,6 @@ echo "http://"$ip:9090
 echo "You can access NodeExporter dashboard on: "
 echo "https://"$ip:9100
 
+echo "You can access Grafanaa dashboard on: "
+echo "http://"$ip:3000
+
