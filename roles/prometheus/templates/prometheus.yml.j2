@@ -50,3 +50,12 @@ scrape_configs:
   - job_name: "Graganaa"
     static_configs:
      - targets: ["localhost:3000"]
+
+  - job_name: "Containers"
+    static_configs:
+     - targets: ["localhost:9323"]
+
+  - job_name: "C-Advisor Engine"
+    static_configs:
+     - targets: ["localhost:8080"]
+  

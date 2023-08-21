@@ -31,3 +31,10 @@ echo "http://"$ip:3000
 echo "You can access Alert Manager  dashboard on: "
 echo "http://"$ip:9093
 
+echo "You can access C-Advisor 'Engine'  dashboard on: "
+echo "http://"$ip:8080
+
+
+echo "You can access Docker Containers  dashboard on: "
+echo "http://"$ip:9323
+

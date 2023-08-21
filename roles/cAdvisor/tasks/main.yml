@@ -1,0 +1,53 @@
+- name: Update apt package cache
+  apt:
+        update_cache: yes
+
+- name: Install Docker dependencies
+  apt:
+        name: ['apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common']
+
+- name: Add Docker GPG key
+  apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+- name: Add Docker repository
+  apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+
+- name: Install Docker
+  apt:
+        name: docker-ce
+        state: latest          
+
+- name: Start and enable Docker service
+  service:
+        name: docker
+        state: started
+        enabled: yes
+
+- name: Copy Daemon File
+  ansible.builtin.copy:
+     src: daemon.json
+     dest: /etc/docker/daemon.json
+  notify: ReStart Docker
+
+
+- name: Run cadvisor container
+  docker_container:
+   name: cadvisor
+   image: gcr.io/cadvisor/cadvisor
+   privileged: yes
+   volumes:
+    - "/:/rootfs:ro"
+    - "/var/run:/var/run:ro"
+    - "/sys:/sys:ro"
+    - "/var/lib/docker/:/var/lib/docker:ro"
+    - "/dev/disk/:/dev/disk:ro"
+   ports:
+    - "8080:8080"
+   devices:
+    - "/dev/kmsg"
+   detach: yes
+   state: started
