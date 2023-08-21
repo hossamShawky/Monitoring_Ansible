@@ -70,6 +70,13 @@
         dest: /etc/prometheus
         owner: prometheus
         group: prometheus
+- name: Copy Prometheus Rules
+  ansible.builtin.copy:
+    src: rules.yml
+    dest: /etc/prometheus
+    owner: prometheus
+    group: prometheus
+  notify: Start-Prometheus-Service
 
 - name: Copy Service File
   ansible.builtin.copy:
