@@ -64,12 +64,12 @@
     group: prometheus
   notify: Start-Prometheus-Service
 
-    #- name: Copy Node Exporter TLS Crt - Prometheus
-    #  ansible.builtin.copy:
-    #    src: node_exporter.crt
-    #    dest: /etc/prometheus
-    #    owner: prometheus
-    #    group: prometheus
+- name: Copy Node Exporter TLS Crt - Prometheus
+  ansible.builtin.copy:
+        src: node_exporter.crt
+        dest: /etc/prometheus
+        owner: prometheus
+        group: prometheus
 
 - name: Copy Service File
   ansible.builtin.copy:

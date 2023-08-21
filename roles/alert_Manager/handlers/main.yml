@@ -1,0 +1,6 @@
+- name: Start Alert Manager Service
+  ansible.builtin.systemd:
+    state: restarted
+    name: alertmanager
+    daemon_reload: true
+# handlers file for alert_Manager

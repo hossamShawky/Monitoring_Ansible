@@ -4,4 +4,4 @@
     - node_Exporter
     - prometheus
     - grafanaa 
-
+    - alert_Manager
