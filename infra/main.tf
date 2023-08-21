@@ -92,6 +92,25 @@ resource "aws_security_group" "Monitoring-SG" {
   }
 
   ingress {
+    description = "Docker Containers"
+    from_port   = 9323
+    to_port     = 9323
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "C-Advisor"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+
+
+
+  ingress {
     description = "Grafana"
     from_port   = 3000
     to_port     = 3000
