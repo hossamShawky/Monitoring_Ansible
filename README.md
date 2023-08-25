@@ -1,4 +1,4 @@
-## Monitoring_Ansible
+### Monitoring_Ansible
 
 This repository contains an Ansible playbook for setting up a monitoring solution for your infrastructure. The playbook automates the installation and configuration of various monitoring tools, providing you with real-time insights into the health and performance of your systems.
 Table of Contents
@@ -10,21 +10,21 @@ Table of Contents
     Contributing
     License
 
-Features
+## Features
 
     Automated installation of monitoring tools.
     Supports various monitoring systems such as Prometheus, Grafana, and Alertmanager.
     Customizable configuration to suit your specific monitoring requirements.
     Easy integration with existing infrastructure using Ansible.
 
-Prerequisites
+## Prerequisites
 
 Before running the playbook, ensure that you have the following prerequisites:
 
     Ansible (version X.X.X or higher): Install Ansible by following the official installation guide ↗.
     Inventory file: Create an Ansible inventory file listing the target hosts where you want to install the monitoring tools. Refer to the Ansible documentation ↗ for more information on creating an inventory file.
 
-Installation
+## Installation
 
 To install the monitoring solution, follow these steps:
 
@@ -43,10 +43,10 @@ Edit the inventory.ini file and add the target hosts where you want to install t
 
 Customize the playbook variables in group_vars/all.yml to configure the monitoring system according to your needs. You can specify the desired monitoring components, ports, credentials, etc.
 
-Run the Ansible playbook:
+Run the Bash Script:
 
 ```bash
-ansible-playbook -i inventory playbook.yml
+source getPublicIPs.sh
 ```
 This will execute the playbook and install the monitoring tools on the specified hosts.
 
@@ -64,7 +64,7 @@ Contributing
 Contributions to this project are welcome and encouraged. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
 Before contributing, please read our contribution guidelines for more information.
-License
+## License
 
 This project is licensed under the MIT License. You are free to modify and distribute the code according to the terms of the license.
 
